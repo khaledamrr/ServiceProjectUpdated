@@ -1,0 +1,27 @@
+import { NestFactory } from '@nestjs/core';
+import { Transport, MicroserviceOptions } from '@nestjs/microservices';
+import { AppModule } from './app.module';
+import { ValidationPipe } from '@nestjs/common';
+
+async function bootstrap() {
+  const app = await NestFactory.createMicroservice<MicroserviceOptions>(
+    AppModule,
+    {
+      transport: Transport.TCP,
+      options: {
+        host: process.env.HOST || 'localhost',
+        port: parseInt(process.env.PORT) || 3001,
+      },
+    },
+  );
+
+  app.useGlobalPipes(new ValidationPipe({
+    whitelist: true,
+    transform: true,
+  }));
+
+  await app.listen();
+  console.log(`🔐 Auth Service is running on TCP port ${process.env.PORT || 3001}`);
+}
+bootstrap();
+

@@ -1,0 +1,20 @@
+{
+  "name": "nestjs-microservices-ecommerce",
+  "version": "1.0.0",
+  "description": "NestJS Microservices E-commerce Platform",
+  "scripts": {
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "install:backend": "cd backend/api-gateway && npm install && cd ../auth-service && npm install --legacy-peer-deps && cd ../user-service && npm install --legacy-peer-deps && cd ../category-service && npm install && cd ../management-service && npm install && cd ../product-service && npm install && cd ../order-service && npm install && cd ../payment-service && npm install",
+    "install:frontend": "cd frontend/web-app && npm install"
+  },
+  "keywords": [
+    "nestjs",
+    "microservices",
+    "ecommerce",
+    "nextjs",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+
