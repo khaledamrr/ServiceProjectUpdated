@@ -535,7 +535,7 @@ export default function AdminProducts() {
                         <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>{product.description}</div>
                       </td>
                       <td style={{ padding: '1rem' }}>{typeof product.category === 'object' ? product.category?.name : product.category || 'N/A'}</td>
-                      <td style={{ padding: '1rem', fontWeight: '500' }}>${product.price}</td>
+                      <td style={{ padding: '1rem', fontWeight: '500' }}>{product.price} EGP</td>
                       <td style={{ padding: '1rem' }}>{product.stock}</td>
                       <td style={{ padding: '1rem' }}>
                         <div style={{ display: 'flex', gap: '0.5rem' }}>

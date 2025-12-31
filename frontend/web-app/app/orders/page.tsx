@@ -101,7 +101,7 @@ export default function Orders() {
           ...prev, 
           [order._id]: { 
             status: 'success', 
-            message: `Refund of $${order.totalAmount.toFixed(2)} processed successfully` 
+            message: `Refund of ${order.totalAmount.toFixed(2)} EGP processed successfully` 
           } 
         }));
         // Refresh orders to show updated status
@@ -209,7 +209,7 @@ export default function Orders() {
                 {order.items.map((item: any, index: number) => (
                   <div key={index} style={{ marginBottom: '0.5rem' }}>
                     <p>
-                      {item.productName} x {item.quantity} - ${item.price}
+                      {item.productName} x {item.quantity} - {item.price} EGP
                     </p>
                   </div>
                 ))}
@@ -217,7 +217,7 @@ export default function Orders() {
 
               <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: '1rem' }}>
                 <p style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
-                  Total: ${order.totalAmount.toFixed(2)}
+                  Total: {order.totalAmount.toFixed(2)} EGP
                 </p>
                 <div style={{ marginTop: '0.5rem' }}>
                   <p style={{ color: '#6b7280', marginBottom: '0.25rem' }}>
@@ -241,7 +241,7 @@ export default function Orders() {
                           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
                             <span style={{ fontSize: '1.25rem' }}>✓</span>
                             <strong style={{ fontSize: '0.9375rem' }}>
-                              Refunded: ${paymentInfo[order._id].refundAmount?.toFixed(2) || order.totalAmount.toFixed(2)}
+                              Refunded: {paymentInfo[order._id].refundAmount?.toFixed(2) || order.totalAmount.toFixed(2)} EGP
                             </strong>
                           </div>
                           {paymentInfo[order._id].refundTransactionId && (
@@ -327,7 +327,7 @@ export default function Orders() {
                     ) : (
                       <>
                         <span>↩</span>
-                        Request Refund (${order.totalAmount.toFixed(2)})
+                        Request Refund ({order.totalAmount.toFixed(2)} EGP)
                       </>
                     )}
                   </button>
@@ -349,7 +349,7 @@ export default function Orders() {
                     gap: '0.5rem'
                   }}>
                     <span style={{ fontSize: '1.25rem' }}>✓</span>
-                    <span>Refunded: ${paymentInfo[order._id]?.refundAmount?.toFixed(2) || order.totalAmount.toFixed(2)}</span>
+                    <span>Refunded: {paymentInfo[order._id]?.refundAmount?.toFixed(2) || order.totalAmount.toFixed(2)} EGP</span>
                   </div>
                 )}
               </div>

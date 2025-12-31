@@ -463,11 +463,11 @@ export default function Checkout() {
                   <div>
                     <div style={{ fontWeight: '600' }}>{item.productName}</div>
                     <div style={{ color: '#6b7280', fontSize: '0.9rem' }}>
-                      ${item.price.toFixed(2)} × {item.quantity}
+                      {item.price.toFixed(2)} EGP × {item.quantity}
                     </div>
                   </div>
                   <div style={{ fontWeight: '600' }}>
-                    ${(item.price * item.quantity).toFixed(2)}
+                    {(item.price * item.quantity).toFixed(2)} EGP
                   </div>
                 </div>
               ))}
@@ -476,7 +476,7 @@ export default function Checkout() {
             <div style={{ borderTop: '1px solid #e5e7eb', marginTop: '1rem', paddingTop: '1rem' }}>
               <div className="summary-row">
                 <span>Subtotal:</span>
-                <span>${calculateTotal().toFixed(2)}</span>
+                <span>{calculateTotal().toFixed(2)} EGP</span>
               </div>
 
               <div className="summary-row">
@@ -486,13 +486,13 @@ export default function Checkout() {
 
               <div className="summary-row">
                 <span>Tax (10%):</span>
-                <span>${(calculateTotal() * 0.1).toFixed(2)}</span>
+                <span>{(calculateTotal() * 0.1).toFixed(2)} EGP</span>
               </div>
 
               <div style={{ borderTop: '2px solid #e5e7eb', marginTop: '1rem', paddingTop: '1rem' }}>
                 <div className="summary-row" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#4f46e5' }}>
                   <span>Total:</span>
-                  <span>${(calculateTotal() * 1.1).toFixed(2)}</span>
+                  <span>{(calculateTotal() * 1.1).toFixed(2)} EGP</span>
                 </div>
               </div>
             </div>

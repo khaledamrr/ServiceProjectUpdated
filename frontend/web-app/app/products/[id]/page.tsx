@@ -125,7 +125,7 @@ export default function ProductDetails() {
           <div className="product-details-info">
             <h1 className="product-details-title">{product.name}</h1>
             
-            <div className="product-details-price">${product.price.toFixed(2)}</div>
+            <div className="product-details-price">{product.price.toFixed(2)} EGP</div>
 
             <div className="product-details-category">
               <strong>Category:</strong> {typeof product.category === 'object' ? product.category?.name : product.category || 'N/A'}

@@ -327,7 +327,7 @@ export default function CategoryPage() {
                           fontWeight: 'bold',
                           color: '#4f46e5',
                         }}>
-                          ${product.price.toFixed(2)}
+                          {product.price.toFixed(2)} EGP
                         </span>
                         {product.stock > 0 && product.stock <= 10 && (
                           <span style={{

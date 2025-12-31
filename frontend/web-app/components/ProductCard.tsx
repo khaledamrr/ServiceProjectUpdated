@@ -71,7 +71,7 @@ export default function ProductCard({ product, onAddToCart }: ProductCardProps) 
             {product.description?.length > 60 ? '...' : ''}
           </p>
           <div className="product-card-footer">
-            <span className="product-card-price">${product.price}</span>
+            <span className="product-card-price">{product.price} EGP</span>
             <button
               className="product-card-add-btn"
               onClick={handleAddToCart}

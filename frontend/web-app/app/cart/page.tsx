@@ -117,7 +117,7 @@ export default function Cart() {
                     >
                       {item.productName}
                     </h3>
-                    <p className="cart-item-price">${item.price.toFixed(2)} each</p>
+                    <p className="cart-item-price">{item.price.toFixed(2)} EGP each</p>
                   </div>
 
                   <div className="cart-item-quantity">
@@ -137,7 +137,7 @@ export default function Cart() {
                   </div>
 
                   <div className="cart-item-total">
-                    ${(item.price * item.quantity).toFixed(2)}
+                    {(item.price * item.quantity).toFixed(2)} EGP
                   </div>
 
                   <button
@@ -164,7 +164,7 @@ export default function Cart() {
 
               <div className="summary-row">
                 <span>Subtotal ({cart.length} items):</span>
-                <span>${calculateTotal().toFixed(2)}</span>
+                <span>{calculateTotal().toFixed(2)} EGP</span>
               </div>
 
               <div className="summary-row">
@@ -174,14 +174,14 @@ export default function Cart() {
 
               <div className="summary-row">
                 <span>Tax:</span>
-                <span>${(calculateTotal() * 0.1).toFixed(2)}</span>
+                <span>{(calculateTotal() * 0.1).toFixed(2)} EGP</span>
               </div>
 
               <div className="summary-divider"></div>
 
               <div className="summary-row summary-total">
                 <span>Total:</span>
-                <span>${(calculateTotal() * 1.1).toFixed(2)}</span>
+                <span>{(calculateTotal() * 1.1).toFixed(2)} EGP</span>
               </div>
 
               <button

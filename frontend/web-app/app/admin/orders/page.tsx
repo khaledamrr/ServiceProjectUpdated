@@ -119,7 +119,7 @@ export default function AdminOrders() {
           ...prev, 
           [order._id]: { 
             status: 'success', 
-            message: `Refund of $${order.totalAmount.toFixed(2)} processed` 
+            message: `Refund of ${order.totalAmount.toFixed(2)} EGP processed` 
           } 
         }));
         await loadOrders();
@@ -284,7 +284,7 @@ export default function AdminOrders() {
                         )}
                       </td>
                       <td style={{ padding: '1rem', fontWeight: '500' }}>
-                        ${order.totalAmount?.toFixed(2)}
+                        {order.totalAmount?.toFixed(2)} EGP
                       </td>
                       <td style={{ padding: '1rem' }}>
                         <span style={{
@@ -312,7 +312,7 @@ export default function AdminOrders() {
                             borderRadius: '0.25rem',
                             display: 'inline-block'
                           }}>
-                            Refunded: ${paymentInfo[order._id].refundAmount?.toFixed(2) || order.totalAmount.toFixed(2)}
+                            Refunded: {paymentInfo[order._id].refundAmount?.toFixed(2) || order.totalAmount.toFixed(2)} EGP
                           </div>
                         )}
                       </td>
@@ -412,7 +412,7 @@ export default function AdminOrders() {
                               ) : (
                                 <>
                                   <span>↩</span>
-                                  Refund (${order.totalAmount.toFixed(2)})
+                                  Refund ({order.totalAmount.toFixed(2)} EGP)
                                 </>
                               )}
                             </button>
@@ -539,7 +539,7 @@ export default function AdminOrders() {
                         color: '#991b1b',
                         fontSize: '0.875rem'
                       }}>
-                        <strong>Refunded:</strong> ${paymentInfo[selectedOrder._id].refundAmount?.toFixed(2) || selectedOrder.totalAmount.toFixed(2)}
+                        <strong>Refunded:</strong> {paymentInfo[selectedOrder._id].refundAmount?.toFixed(2) || selectedOrder.totalAmount.toFixed(2)} EGP
                         {paymentInfo[selectedOrder._id].refundTransactionId && (
                           <div style={{ fontSize: '0.75rem', marginTop: '0.25rem' }}>
                             Transaction: {paymentInfo[selectedOrder._id].refundTransactionId}
@@ -569,16 +569,16 @@ export default function AdminOrders() {
                       <div>
                         <p style={{ fontWeight: '500' }}>{item.productName}</p>
                         <p style={{ fontSize: '0.875rem', color: '#6b7280' }}>
-                          ${item.price.toFixed(2)} × {item.quantity}
+                          {item.price.toFixed(2)} EGP × {item.quantity}
                         </p>
                       </div>
-                      <p style={{ fontWeight: 'bold' }}>${(item.price * item.quantity).toFixed(2)}</p>
+                      <p style={{ fontWeight: 'bold' }}>{(item.price * item.quantity).toFixed(2)} EGP</p>
                     </div>
                   ))}
                 </div>
                 <div style={{ marginTop: '1rem', textAlign: 'right', padding: '1rem', backgroundColor: '#f9fafb', borderRadius: '0.5rem' }}>
                   <p style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
-                    Total: ${selectedOrder.totalAmount?.toFixed(2)}
+                    Total: {selectedOrder.totalAmount?.toFixed(2)} EGP
                   </p>
                 </div>
               </div>
@@ -659,7 +659,7 @@ export default function AdminOrders() {
                   ) : (
                     <>
                       <span>↩</span>
-                      Process Refund (${selectedOrder.totalAmount.toFixed(2)})
+                      Process Refund ({selectedOrder.totalAmount.toFixed(2)} EGP)
                     </>
                   )}
                 </button>
